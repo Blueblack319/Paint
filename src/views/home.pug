@@ -3,7 +3,22 @@ html
         link(rel="stylesheet", href="../scss/style.scss")
         title Paint App
     body
-        
-
-
+        main
+            canvas#js-canvas
+        footer
+            form#js-form-container
+                input.brush#js-brush(type="range", name="border")
+                .buttons
+                    button#js-button-change
+                    button#js-button-save save
+                .colors
+                    button.color#color
+                    button.color#color
+                    button.color#color
+                    button.color#color
+                    button.color#color
+                    button.color#color
+                    button.color#color
+                    button.color#color
+                    button.color#color
         script(src="js/main.js")

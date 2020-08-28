@@ -3,8 +3,10 @@
 ## Build Paint web-app wihth Vanilla JS
 
 ## Steps:
-- [ ] pug
+
+- [x] server
+- [x] gulpfile
+- [x] pug
 - [ ] style
 - [ ] js
-- [ ] build
-- [ ] deploy
+- [ ] functional js
