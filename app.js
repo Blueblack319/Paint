@@ -1,11 +1,17 @@
 import express from "express";
+import morgan from "morgan";
+import path from "path";
 
 const app = express();
 
-PORT = 3000;
+app.use(morgan("dev"));
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "src", "views"));
 
-const handleListen = () => {
-  console.log(`✅ Listening on: http://localhost:${PORT}`);
+const handleHome = (req, res) => {
+  res.render("home", { name: "potato" });
 };
 
-app.listen(PORT, handleListen);
+app.get("/", handleHome);
+
+export default app;
