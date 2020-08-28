@@ -3,7 +3,6 @@ import bro from "gulp-bro";
 import babelify from "babelify";
 import del from "del";
 import gulp from "gulp";
-import gPug from "gulp-pug";
 import minify from "gulp-csso";
 import sass from "gulp-sass";
 
@@ -12,11 +11,6 @@ sass.compiler = require("node-sass");
 const clean = () => del(["dist"]);
 
 const routes = {
-  pug: {
-    src: "src/pug/*.pug",
-    dist: "dist/",
-    watch: "src/pug/**/*.pug",
-  },
   style: {
     src: "src/scss/*.scss",
     dist: "dist/style/",
@@ -30,13 +24,9 @@ const routes = {
 };
 
 const watch = () => {
-  gulp.watch(routes.pug.watch, gPug);
   gulp.watch(routes.style.watch, style);
   gulp.watch(routes.js.watch, js);
 };
-
-const pug = () =>
-  gulp.src(routes.pug.src).pipe(gPug()).pipe(gulp.dest(routes.pug.dist));
 
 const style = () =>
   gulp
@@ -65,7 +55,7 @@ const js = () =>
     )
     .pipe(gulp.dest(routes.js.dist));
 
-const assets = gulp.series([pug, style, js]);
+const assets = gulp.series([style, js]);
 const live = gulp.series([watch]);
 
 export const build = gulp.series([clean, assets]);
