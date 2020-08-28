@@ -4,7 +4,9 @@
   "description": "Build Paint web-app wihth Vanilla JS",
   "main": "gulpfile.babel.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "gulp prepare",
+    "dev": "gulp dev",
+    "deploy": "gulp deploy"
   },
   "repository": {
     "type": "git",
@@ -17,7 +19,22 @@
   },
   "homepage": "https://github.com/crazybirdz/Paint#readme",
   "dependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/register": "^7.10.5",
+    "babelify": "^10.0.0",
+    "del": "^5.1.0",
     "gulp": "^4.0.2",
-    "gulp-cli": "^2.3.0"
-  }
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-bro": "^2.0.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^4.14.1",
+    "uglifyify": "^5.0.2"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
 }
