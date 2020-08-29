@@ -3,18 +3,19 @@
 body {
   background-color: #f6f9fc;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 main {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   .canvas {
     margin: 40px 0;
     background-color: white;
+    border-radius: 10px;
     box-shadow: 0px 8px 25px -15px rgba(0, 0, 0, 0.75);
   }
   .form-container {
@@ -37,6 +38,7 @@ main {
         font-size: 15px;
         font-weight: 700;
         box-shadow: 0px 15px 25px -15px rgba(0, 0, 0, 0.75);
+        cursor: pointer;
         &:focus {
           outline: none;
         }
@@ -50,6 +52,7 @@ main {
         border: none;
         border-radius: 50%;
         box-shadow: 0px 15px 25px -15px rgba(0, 0, 0, 0.75);
+        cursor: pointer;
         &:first-child {
           background-color: black;
         }
