@@ -12,4 +12,4 @@
 - [x] thickness
 - [x] change colors
 - [x] stroke / fill
-- [ ] save
+- [x] save

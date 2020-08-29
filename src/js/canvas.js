@@ -2,7 +2,9 @@ const canvas = document.getElementById("js-canvas");
 const ctx = canvas.getContext("2d");
 const range = document.getElementById("js-brush-thickness");
 const colorBtns = document.querySelectorAll("#js-color");
-const changeMode = document.getElementById("js-button-changeMode");
+const changeModeBtn = document.getElementById("js-button-changeMode");
+const saveBtn = document.getElementById("js-button-save");
+const saveLink = document.getElementById("js-link-save");
 
 let painting = false;
 let mode = "PAINT";
@@ -54,6 +56,16 @@ const handleFill = () => {
   }
 };
 
+const handleSave = (event) => {
+  event.preventDefault();
+  saveLink.setAttribute("download", "CrazyPaper.png");
+  saveLink.setAttribute(
+    "href",
+    canvas.toDataURL("image/png").replace("image/png", "image/octet-stream")
+  );
+  saveLink.click();
+};
+
 const init = () => {
   canvas.addEventListener("click", handleFill);
   canvas.addEventListener("mousedown", function () {
@@ -65,7 +77,8 @@ const init = () => {
   colorBtns.forEach((colorBtn) => {
     colorBtn.addEventListener("click", handleColorChange);
   });
-  changeMode.addEventListener("click", handleChangeMode);
+  changeModeBtn.addEventListener("click", handleChangeMode);
+  saveBtn.addEventListener("click", handleSave);
 };
 
 if (canvas) {
