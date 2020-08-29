@@ -7,6 +7,10 @@
 - [x] server
 - [x] gulpfile
 - [x] pug
-- [ ] style
-- [ ] js
+- [x] style
+- [x] events
+- [x] thickness
+- [ ] stroke / fill
+- [ ] change colors
+- [ ] save
 - [ ] functional js

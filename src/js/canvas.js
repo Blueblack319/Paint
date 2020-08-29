@@ -1,12 +1,9 @@
 const canvas = document.getElementById("js-canvas");
 const ctx = canvas.getContext("2d");
+const range = document.getElementById("js-brush-thickness");
 
 let painting = false;
 
-canvas.width = 700;
-canvas.height = 700;
-
-ctx.lineWidth = 2.5;
 ctx.strokeStyle = "black";
 
 const handleMouseMove = (event) => {
@@ -26,6 +23,11 @@ const handleMouseUp = () => {
   console.log(painting);
 };
 
+const handleThickness = () => {
+  const thickness = range.value;
+  ctx.lineWidth = thickness;
+};
+
 if (canvas) {
   canvas.addEventListener("mousedown", function () {
     painting = true;
@@ -33,4 +35,5 @@ if (canvas) {
   });
   canvas.addEventListener("mouseup", handleMouseUp);
   canvas.addEventListener("mousemove", handleMouseMove);
+  range.addEventListener("input", handleThickness);
 }

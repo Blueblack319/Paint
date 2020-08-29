@@ -6,7 +6,19 @@ html
         main
             canvas.canvas#js-canvas(width="700px", height="700px")
             form.form-container#js-form-container
-                input.brush#js-brush(type="range", name="border")
+                input.brush#js-brush-thickness(type="range", list="tickmarks" min=0, max=10, step=1, value=1)
+                datalist(id="tickmarks")
+                    option(value="0")
+                    option(value="1")
+                    option(value="2")
+                    option(value="3")
+                    option(value="4")
+                    option(value="5")
+                    option(value="6")
+                    option(value="7")
+                    option(value="8")
+                    option(value="9")
+                    option(value="10")
                 .buttons
                     button#js-button-change PAINT
                     button#js-button-save SAVE
