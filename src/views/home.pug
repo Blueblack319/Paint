@@ -6,9 +6,8 @@ html
         main
             canvas.canvas#js-canvas(width="700px", height="700px")
             form.form-container#js-form-container
-                input.brush#js-brush-thickness(type="range", list="tickmarks" min=0, max=10, step=1, value=1)
+                input.brush#js-brush-thickness(type="range", list="tickmarks" min=1, max=11, step=1, value=1)
                 datalist(id="tickmarks")
-                    option(value="0")
                     option(value="1")
                     option(value="2")
                     option(value="3")
@@ -19,17 +18,18 @@ html
                     option(value="8")
                     option(value="9")
                     option(value="10")
+                    option(value="11")
                 .buttons
-                    button#js-button-change PAINT
-                    button#js-button-save SAVE
+                    button#js-button-changeMode fill
+                    button#js-button-save save
                 .colors
-                    button.color#color
-                    button.color#color
-                    button.color#color
-                    button.color#color
-                    button.color#color
-                    button.color#color
-                    button.color#color
-                    button.color#color
-                    button.color#color
+                    button.color#js-color
+                    button.color#js-color
+                    button.color#js-color
+                    button.color#js-color
+                    button.color#js-color
+                    button.color#js-color
+                    button.color#js-color
+                    button.color#js-color
+                    button.color#js-color
         script(src="/dist/js/main.js")

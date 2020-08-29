@@ -10,7 +10,6 @@
 - [x] style
 - [x] events
 - [x] thickness
-- [ ] stroke / fill
-- [ ] change colors
+- [x] change colors
+- [x] stroke / fill
 - [ ] save
-- [ ] functional js
