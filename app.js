@@ -5,6 +5,7 @@ import path from "path";
 const app = express();
 
 app.use(morgan("dev"));
+app.use("/dist", express.static("dist"));
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "src", "views"));
 

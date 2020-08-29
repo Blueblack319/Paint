@@ -13,7 +13,7 @@ const clean = () => del(["dist"]);
 const routes = {
   style: {
     src: "src/scss/*.scss",
-    dist: "dist/style/",
+    dist: "dist/css/",
     watch: "src/scss/**/*.scss",
   },
   js: {
@@ -48,7 +48,7 @@ const js = () =>
     .pipe(
       bro({
         transform: [
-          babelify.configure({ presets: ["es2015"] }),
+          babelify.configure({ presets: ["@babel/preset-env"] }),
           ["uglifyify", { global: true }],
         ],
       })

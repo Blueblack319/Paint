@@ -1,16 +1,15 @@
 html
     head
-        link(rel="stylesheet", href="../scss/style.scss")
+        link(rel="stylesheet", href="/dist/css/style.css")
         title Paint App
     body
         main
-            canvas#js-canvas
-        footer
-            form#js-form-container
+            canvas.canvas#js-canvas(width="700px", height="700px")
+            form.form-container#js-form-container
                 input.brush#js-brush(type="range", name="border")
                 .buttons
-                    button#js-button-change
-                    button#js-button-save save
+                    button#js-button-change PAINT
+                    button#js-button-save SAVE
                 .colors
                     button.color#color
                     button.color#color
@@ -21,4 +20,4 @@ html
                     button.color#color
                     button.color#color
                     button.color#color
-        script(src="js/main.js")
+        script(src="/dist/js/main.js")
