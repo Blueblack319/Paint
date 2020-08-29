@@ -59,11 +59,12 @@ const handleFill = () => {
 const handleSave = (event) => {
   event.preventDefault();
   saveLink.setAttribute("download", "CrazyPaper.png");
-  saveLink.setAttribute(
-    "href",
-    canvas.toDataURL("image/png").replace("image/png", "image/octet-stream")
-  );
+  saveLink.setAttribute("href", canvas.toDataURL());
   saveLink.click();
+};
+
+const handleMenu = (event) => {
+  event.preventDefault();
 };
 
 const init = () => {
@@ -73,6 +74,7 @@ const init = () => {
   });
   canvas.addEventListener("mouseup", handleMouseUp);
   canvas.addEventListener("mousemove", handleMouseMove);
+  canvas.addEventListener("contextmenu", handleMenu);
   range.addEventListener("input", handleThickness);
   colorBtns.forEach((colorBtn) => {
     colorBtn.addEventListener("click", handleColorChange);
